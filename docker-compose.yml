@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: helpdesk_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - helpdesk_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  helpdesk_postgres_data:
